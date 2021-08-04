@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FeiyuK</string>
+
+    <string name="main_home">首页</string>
+    <string name="main_near">附近</string>
+    <string name="main_rank">排行</string>
+    <string name="main_me">我的</string>
+
+</resources>

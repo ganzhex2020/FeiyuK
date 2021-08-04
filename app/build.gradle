@@ -1,0 +1,96 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        applicationId "com.phi.feiyuk"
+       // applicationId "com.feiyu.phonelive"
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+//        ndk {
+//            //选择要添加的对应cpu类型的.so库。
+//            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+//            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+//        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "03dbe8df5c49ca2cce3d2289", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+      //  manifestPlaceholders = rootProject.ext.manifestPlaceholders
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar',"*.aar"], dir: 'libs')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation rootProject.ext.supportx["core_ktx"]
+    implementation rootProject.ext.supportx["appcompat"]
+    implementation rootProject.ext.supportx["material"]
+    implementation rootProject.ext.supportx["constraintlayout"]
+    implementation files('libs/jcore-android-2.9.0.jar')
+    implementation files('libs/jpush-android-4.2.8.jar')
+    implementation files('libs/jmessage-sdk-android-2.9.2.jar')
+    testImplementation rootProject.ext.supportx["junit"]
+    androidTestImplementation rootProject.ext.supportx["test_ext_junit"]
+    androidTestImplementation rootProject.ext.supportx["espresso_core"]
+    implementation rootProject.ext.dependencies["multidex"]
+
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1'
+
+    //smartRefreshLayout
+//    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖
+//    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
+//    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'    //经典加载
+//    implementation 'com.scwang.smart:refresh-header-material:2.0.1'    //谷歌刷新头*/
+
+//    implementation 'androidx.legacy:legacy-support-core-ui:1.0.0'
+//    implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+//    implementation 'cn.jiguang.sdk:jcore:2.3.0'
+    //implementation 'cn.jiguang.sdk:jmessage:2.9.2'
+//    implementation 'cn.jiguang.sdk:jpush:4.2.8'
+
+    api project(path: ':basemodule')
+
+}

@@ -1,0 +1,6 @@
+rootProject.name = "FeiyuK"
+include ':app'
+
+include ':httplib'
+include ':basemodule'
+include ':brvahlib'

@@ -1,0 +1,53 @@
+ext {
+
+
+    //android开发版本配置
+    android = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 21,
+            targetSdkVersion : 28,
+    ]
+    //google support配置
+    supportx = [
+            "appcompat"       : "androidx.appcompat:appcompat:1.3.0",
+            "core_ktx"        : "androidx.core:core-ktx:1.6.0",
+            "constraintlayout": "androidx.constraintlayout:constraintlayout:2.0.4",
+            "junit"           : "junit:junit:4.13.1",
+            "test_ext_junit"  : "androidx.test.ext:junit:1.1.3",
+            "espresso_core"   : "androidx.test.espresso:espresso-core:3.4.0",
+            "material"        : "com.google.android.material:material:1.4.0"
+    ]
+
+    //依赖第三方配置
+    dependencies = [
+            "okhttp"                    : "com.squareup.okhttp3:okhttp:4.9.1",
+            "okhttp_logging_interceptor": "com.squareup.okhttp3:logging-interceptor:4.9.1",
+            "retrofit"                  : "com.squareup.retrofit2:retrofit:2.9.0",
+            "converter_gson"            : "com.squareup.retrofit2:converter-gson:2.9.0",
+            "coroutines_core"           : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1",
+            "coroutines_android"        : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1",
+            "multidex"                  : "androidx.multidex:multidex:2.0.1",
+            "mmkv"                      : "com.tencent:mmkv-static:1.2.10",
+            "lifecycle_runtime_ktx"     : "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1",
+            "lifecycle_viewmodel_ktx"   : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1",
+            "lifecycle_livedata_ktx"    : "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1",
+            "glide"                     : "com.github.bumptech.glide:glide:4.12.0",
+            "glide_compiler"            : "com.github.bumptech.glide:compiler:4.12.0",
+            "glide_transformations"     : "jp.wasabeef:glide-transformations:4.3.0",
+            //    "banner"                              : "io.github.youth5201314:banner:2.2.2",
+            "banner"                    : "com.youth.banner:banner:2.1.0",
+            "assent"                    : "com.afollestad.assent:core:3.0.0-RC4",
+    ]
+
+//    manifestPlaceholders = [
+//            //服务器地址
+//            //    serverHost       : "http://www.ppgd68gram1970.com",
+//            //极光推送 IM
+//            JPUSH_PKGNAME: applicationId,
+//            JPUSH_APPKEY : "81aac430e93f7287a5acf8ab", //JPush上注册的包名对应的appkey.
+//            JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//
+//    ]
+
+}

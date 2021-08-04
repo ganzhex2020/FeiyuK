@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clipChildren="false"
+    >
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <FrameLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:elevation="5dp"
+        >
+
+        <com.phi.feiyuk.view.TabButtonGroup
+            android:id="@+id/tab_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+            <com.phi.feiyuk.view.TabButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tbn_checked="true"
+                app:tbn_icon_size="26dp"
+                app:tbn_selected_icon="@drawable/ic_main_home_select"
+                app:tbn_text_color="@color/textColor"
+                app:tbn_text_size="11sp"
+                app:tbn_tip="@string/main_home"
+                app:tbn_unselected_icon="@drawable/ic_main_home_normal"
+                />
+
+            <com.phi.feiyuk.view.TabButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="60dp"
+                android:layout_weight="1"
+                app:tbn_icon_size="26dp"
+                app:tbn_selected_icon="@drawable/ic_main_near_select"
+                app:tbn_text_color="@color/textColor"
+                app:tbn_text_size="11sp"
+                app:tbn_tip="@string/main_near"
+                app:tbn_unselected_icon="@drawable/ic_main_near_normal"
+                />
+
+            <com.phi.feiyuk.view.TabButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tbn_icon_size="26dp"
+                app:tbn_selected_icon="@drawable/ic_main_rank_select"
+                app:tbn_text_color="@color/textColor"
+                app:tbn_text_size="11sp"
+                app:tbn_tip="@string/main_rank"
+                app:tbn_unselected_icon="@drawable/ic_main_rank_normal"
+                />
+
+            <com.phi.feiyuk.view.TabButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tbn_icon_size="26dp"
+                app:tbn_selected_icon="@drawable/ic_main_me_select"
+                app:tbn_text_color="@color/textColor"
+                app:tbn_text_size="11sp"
+                app:tbn_tip="@string/main_me"
+                app:tbn_unselected_icon="@drawable/ic_main_me_normal"
+                />
+
+        </com.phi.feiyuk.view.TabButtonGroup>
+
+        <ImageView
+            android:id="@+id/btn_start"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_main_start"
+            />
+
+    </FrameLayout>
+
+</LinearLayout>
