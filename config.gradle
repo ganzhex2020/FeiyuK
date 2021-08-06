@@ -38,6 +38,9 @@ ext {
             //    "banner"                              : "io.github.youth5201314:banner:2.2.2",
             "banner"                    : "com.youth.banner:banner:2.1.0",
             "assent"                    : "com.afollestad.assent:core:3.0.0-RC4",
+            "room_runtime"                        : "androidx.room:room-runtime:2.3.0",
+            "room_compiler"                       : "androidx.room:room-compiler:2.3.0",
+            "room_ktx"                            : "androidx.room:room-ktx:2.3.0",
     ]
 
 //    manifestPlaceholders = [

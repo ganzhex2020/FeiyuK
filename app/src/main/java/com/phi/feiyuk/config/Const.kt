@@ -1,7 +1,7 @@
 package com.phi.feiyuk.config
 
 object Const {
-
+    const val HOST = "http://www.ppgd68gram1970.com"
     const val BASE_URL = "http://www.ppgd68gram1970.com/api/public/"
 
     //key

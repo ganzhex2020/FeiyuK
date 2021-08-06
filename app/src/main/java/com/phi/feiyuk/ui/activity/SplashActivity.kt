@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import com.gyf.immersionbar.ktx.immersionBar
 import com.phi.basemodule.base.BaseVMActivity
 import com.phi.basemodule.utils.LogUtils
 import com.phi.feiyuk.R
@@ -33,9 +34,13 @@ class SplashActivity : BaseVMActivity<SplashViewModel>() {
 
     override fun initView() {
 
-        DeviceUtils.setFullScreen(this, R.color.transparent, false)
+    //    DeviceUtils.setFullScreen(this, R.color.transparent, false)
         //   val statusBarHeight = DeviceUtils.getStatusBarHeight(this)
         //    cl_parent.setPadding(0, statusBarHeight, 0, 0)
+        immersionBar {
+        //    transparentBar()
+            fullScreen(true)
+        }
         GlideUtils.display(R.mipmap.ic_splash, iv_splash)
 
         cl_skip.click {

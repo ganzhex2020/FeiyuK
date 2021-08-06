@@ -1,7 +1,12 @@
 package com.phi.feiyuk.model.entity
 
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import com.phi.brvahlib.entity.SectionEntity
+import com.phi.feiyuk.db.ListConverters
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
@@ -129,31 +134,36 @@ data class BannerEntity(
     val slide_pic: String,
     val slide_url: String
 )
+@Entity
+@TypeConverters(ListConverters::class)
 data class UserInfoEntity(
-    val agent_switch: String,
-    val avatar: String,
-    val avatar_thumb: String,
-    val birthday: String,
-    val city: String,
-    val coin: String,
-    val consumption: String,
-    val family_switch: String,
-    val fans: String,
-    val follows: String,
-    val id: String,
-    val level: String,
-    val level_anchor: String,
-    val liang: Liang,
-    val list: List<List<MyEntity>>,
-    val lives: Int,
-    val location: String,
-    val province: String,
-    val sex: String,
-    val signature: String,
-    val user_nicename: String,
-    val vip: Vip,
-    val votes: String,
-    val votestotal: String
+    @PrimaryKey
+    var id: String = "",
+    var agent_switch: String = "",
+    var avatar: String = "",
+    var avatar_thumb: String = "",
+    var birthday: String = "",
+    var city: String = "",
+    var coin: String = "",
+    var consumption: String = "",
+    var family_switch: String = "",
+    var fans: String = "",
+    var follows: String = "",
+    var level: String = "",
+    var level_anchor: String = "",
+    @Ignore
+    var liang: Liang? = null,
+    var list: List<List<MyEntity>> = emptyList(),
+    var lives: Int = 0,
+    var location: String = "",
+    var province: String = "",
+    var sex: String = "",
+    var signature: String = "",
+    var user_nicename: String = "",
+    @Ignore
+    var vip: Vip? = null,
+    var votes: String = "",
+    var votestotal: String = ""
 )
 
 data class Liang(
@@ -196,3 +206,37 @@ data class LoginEntity(
     val user_type: String,
     val votestotal: String
 )
+
+data class VideoItemEntity(
+    val ad_url: String,
+    val addtime: String,
+    val city: String,
+    val comments: String,
+    val datetime: String,
+    val goodsid: String,
+    //val goodsinfo: Goodsinfo,
+    val href: String,
+    val id: String,
+    val is_ad: String,
+    val isattent: String,
+    val islike: String,
+    val isstep: String,
+    val lat: String,
+    val likes: String,
+    val lng: String,
+    val music_id: String,
+    val shares: String,
+    val steps: String,
+    val thumb: String,
+    val thumb_s: String,
+    val title: String,
+    val uid: String,
+    val userinfo: UserInfoEntity,
+    val views: String
+)
+
+//class Goodsinfo(
+//)
+
+
+

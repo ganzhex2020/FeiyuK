@@ -38,6 +38,11 @@ class RemoteDataSource(private val serviceApi: ServiceApi) {
         return serviceApi.userLogin(user_login, user_pass,JPushUtil.getInstance().pushID)
     }
 
+    //首页视频列表
+    suspend fun getHomeVideoData(uid:String,token:String,pageIndex: Int):BaseResult<List<VideoItemEntity>>{
+        return serviceApi.getHomeVideoData(uid, token, pageIndex)
+    }
+
 
 
 }

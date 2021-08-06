@@ -90,6 +90,15 @@ dependencies {
 //    implementation 'cn.jiguang.sdk:jcore:2.3.0'
     //implementation 'cn.jiguang.sdk:jmessage:2.9.2'
 //    implementation 'cn.jiguang.sdk:jpush:4.2.8'
+    kapt rootProject.ext.dependencies["room_compiler"]
+    implementation rootProject.ext.dependencies["room_runtime"]
+    implementation rootProject.ext.dependencies["room_ktx"]
+    // 基础依赖包，必须要依赖
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+// fragment快速实现（可选）
+    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+// kotlin扩展（可选）
+    implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
 
     api project(path: ':basemodule')
 

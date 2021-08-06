@@ -209,6 +209,9 @@
             android:authorities="${applicationId}.IMProvider"
             android:exported="false" />
 
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
 
 
         <activity android:name=".ui.activity.SplashActivity"
@@ -221,6 +224,7 @@
         </activity>
         <activity android:name=".ui.activity.MainActivity"/>
         <activity android:name=".ui.activity.LoginActivity"/>
+        <activity android:name=".ui.activity.UserProfileActivity"/>
     </application>
 
 </manifest>

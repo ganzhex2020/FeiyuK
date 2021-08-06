@@ -29,4 +29,6 @@ interface ServiceApi {
     @GET("?service=Login.userLogin")
     suspend fun userLogin(@Query("user_login")user_login:String,@Query("user_pass")user_pass:String,@Query("pushid")pushid:String):BaseResult<List<LoginEntity>>
 
+    @GET("?service=Video.GetVideoList")
+    suspend fun getHomeVideoData(@Query("uid")uid:String,@Query("token")token:String,@Query("p")pageIndex:Int):BaseResult<List<VideoItemEntity>>
 }

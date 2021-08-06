@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.phi.feiyuk.view.SquareConLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.phi.feiyuk.view.SquareConLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,8 +10,8 @@
         android:id="@+id/iv_cover"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:riv_corner_radius="5dp"
         android:scaleType="centerCrop"
+        app:riv_corner_radius="5dp"
         />
 
     <com.phi.feiyuk.view.RatioRoundImageView
@@ -48,7 +49,7 @@
         android:singleLine="true"
         android:textColor="#fff"
         android:textSize="13sp"
-        app:dt_left_drawable="@drawable/ic_homelive_num"
+        app:dt_left_drawable="@drawable/ic_video_num"
         app:dt_left_height="14dp"
         app:dt_left_width="14dp"
         android:text="123"
@@ -68,6 +69,22 @@
         android:singleLine="true"
         android:textColor="#fff"
         android:textSize="14sp"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/iv_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="10dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="#fff"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:text="111"
         />
     
 

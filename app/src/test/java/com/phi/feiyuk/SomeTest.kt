@@ -39,7 +39,8 @@ class SomeTest {
                 println(result)
             }*/
             launch(Dispatchers.IO) {
-                val result = serviceApi.getUserInfo("45245","fa8028cd2867e195604c4d57e6299921")
+              //  val result = serviceApi.getUserInfo("45245","fa8028cd2867e195604c4d57e6299921")
+                val result = serviceApi.getHomeVideoData("45082","4f8a1df90f8097e45f106435193d9fca",1)
                 println(result)
             }
         }

@@ -2,6 +2,7 @@ package com.phi.feiyuk.di
 
 import com.phi.feiyuk.config.Const.BASE_URL
 import com.phi.feiyuk.model.api.ServiceApi
+import com.phi.feiyuk.model.repository.LocalDataSource
 import com.phi.feiyuk.model.repository.RemoteDataSource
 import com.phi.feiyuk.viewmodel.*
 import com.phi.httplib.RetrofitClient
@@ -15,16 +16,19 @@ val commonModule = module {
 }
 
 val viewModelModule = module {
-    viewModel{SplashViewModel(get())}
+    viewModel{SplashViewModel(get(),get())}
     viewModel{MainViewModel(get())}
     viewModel{HomeLiveViewModel(get())}
+    viewModel{HomeVideoViewModel(get())}
     viewModel{LoginViewModel(get())}
-    viewModel{MineViewModel(get())}
+    viewModel{MineViewModel(get(),get())}
+    viewModel{UserProfileViewModel(get(),get())}
 
 }
 
 val repositoryModule = module {
     single { RemoteDataSource(get()) }
+    single { LocalDataSource() }
 
 }
 val appModule = listOf(commonModule, viewModelModule, repositoryModule)

@@ -7,6 +7,7 @@ import androidx.annotation.DrawableRes
 import com.bumptech.glide.Glide
 
 import com.bumptech.glide.request.RequestOptions
+import com.phi.feiyuk.config.Const
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
@@ -18,13 +19,21 @@ object GlideUtils {
     }
     @JvmStatic
     fun display(url: String, imageView: ImageView) {
-        Glide.with(imageView.context).asDrawable().load(url).into(imageView)
+        var newUrl = url
+        if (!url.startsWith("http://")&&!url.startsWith("https://")){
+            newUrl = Const.HOST + url
+        }
+        Glide.with(imageView.context).asDrawable().load(newUrl).into(imageView)
     }
 
     @JvmStatic
     fun loadImage(imageView:ImageView,url:String){
+        var newUrl = url
+        if (!url.startsWith("http://")&&!url.startsWith("https://")){
+            newUrl = Const.HOST + url
+        }
         val options = RequestOptions().dontAnimate()/*.diskCacheStrategy(DiskCacheStrategy.RESOURCE)*/
-        Glide.with(imageView.context).load(url).apply(options).into(imageView)
+        Glide.with(imageView.context).load(newUrl).apply(options).into(imageView)
     }
 
     @JvmStatic
@@ -38,9 +47,13 @@ object GlideUtils {
 
     @JvmStatic
     fun loadCircleImage(imageView: ImageView,url: String){
+        var newUrl = url
+        if (!url.startsWith("http://")&&!url.startsWith("https://")){
+            newUrl = Const.HOST + url
+        }
         val options = RequestOptions().centerCrop()
             .dontAnimate()/*.diskCacheStrategy(DiskCacheStrategy.RESOURCE)*/
-        Glide.with(imageView.context).load(url).apply(options).into(imageView)
+        Glide.with(imageView.context).load(newUrl).apply(options).into(imageView)
     }
     @JvmStatic
     fun loadCircleImage(imageView: ImageView,@DrawableRes resId:Int){
@@ -67,12 +80,16 @@ object GlideUtils {
     }
     @JvmStatic
     fun loadRoundImage(imageView: ImageView,url: String,radius:Int){
+        var newUrl = url
+        if (!url.startsWith("http://")&&!url.startsWith("https://")){
+            newUrl = Const.HOST + url
+        }
         val options = RequestOptions().centerCrop()/*.circleCrop()*/
             .dontAnimate()
             .transform(RoundedCornersTransformation(radius, 0))
         //   .transform(GlideRoundTransform(15))
         /*   .diskCacheStrategy(DiskCacheStrategy.RESOURCE)*/
-        Glide.with(imageView.context).load(url).apply(options).into(imageView)
+        Glide.with(imageView.context).load(newUrl).apply(options).into(imageView)
     }
 
 }
